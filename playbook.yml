@@ -1,0 +1,16 @@
+---
+
+  - name: Configure Website that pulls random memes from reddit
+    hosts: all
+    tasks:
+    
+        #Configures the dependancies such as pip  and python
+      - include_tasks: dependancies.yml 
+
+        #Creates project directory as well as moves files from control node
+      - include_tasks: configure_files_folder.yml
+
+        #Runs the flask app python script "python_flaskapp"
+      - include_tasks: run_script.yml
+
+...  

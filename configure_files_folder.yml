@@ -1,0 +1,19 @@
+---
+
+  - name: Make project directory "memesite" and "templates" inside
+    file:
+      name: /memesite/templates
+      state: directory
+      recurse: yes
+
+  - name: copy python app script to project folder "memesite"
+    copy:
+      src: python_flaskapp
+      dest: /memesite
+
+  - name: Copy html file to /templates in managed node
+    copy:
+      src: meme_index.html
+      dest: /memesite/templates
+
+...

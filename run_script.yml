@@ -1,0 +1,8 @@
+---
+
+  - name: Runs the python script in "memesite" directory
+    command:
+      chdir: /memesite
+      cmd: python3 python_flaskapp.py
+
+...

@@ -1,0 +1,26 @@
+---
+
+  - name: Install Python pip
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - python3
+      
+  
+  - name: Update apt and python dependancies
+    command: "{{ item }}"
+    with_items:
+      - apt-get update
+      - apt-get -y install python3-pip    
+
+
+  - name: Installs applications for flask app website
+    pip:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - flask
+      - requests
+
+...
